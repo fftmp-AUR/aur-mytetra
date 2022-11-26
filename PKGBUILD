@@ -1,29 +1,27 @@
 # Maintainer: fft
 # Contributor: cyberxndr <cyberxndr@gmail.com>
 
-pkgname=mytetra
+pkgname=mytetra-git
 pkgver=1.44.160
 pkgrel=1
-pkgdesc="Personal manager for data memorization and structuring notes"
+pkgdesc="fftmp's git version of personal manager for data memorization and structuring notes"
 arch=('x86_64')
-url="https://github.com/xintrea/mytetra_dev"
+url="https://github.com/fftmp-forked/mytetra_dev"
 license=('GPL3')
-depends=('hicolor-icon-theme' 'qt5-base')
-source=("https://github.com/xintrea/mytetra_dev/archive/refs/tags/v.${pkgver}.tar.gz")
+depends=('hicolor-icon-theme' 'qt6-base')
+makedepends=('qt6-tools')
+optdepends=('mimetex: display TeX formulas')
+source=("${pkgname}::git+https://github.com/fftmp-forked/mytetra_dev.git#branch=fft_fork")
 
-sha256sums=('301c297bc359197e07afa2302841a0f7e24c5589ea0b0f5e13b9c2ff6806a562')
+sha256sums=('SKIP')
 
 build(){
-    cd "mytetra_dev-v.${pkgver}"
-    qmake
+    cmake -DCMAKE_BUILD_TYPE=Release "${pkgname}"
     make
 }
 
 
 package(){
-	cd "mytetra_dev-v.${pkgver}/app"
-	make install INSTALL_ROOT="${pkgdir}"
-	mkdir -p "${pkgdir}/usr/bin/"
-	mv "${pkgdir}/mytetra" "${pkgdir}/usr/bin/"
+	make install DESTDIR="${pkgdir}"
 }
 
