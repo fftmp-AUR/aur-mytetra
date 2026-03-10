@@ -2,7 +2,7 @@
 # Contributor: cyberxndr <cyberxndr@gmail.com>
 
 pkgname=mytetra
-pkgver=1.44.183
+pkgver=1.44.232
 pkgrel=1
 pkgdesc="Personal manager for data memorization and structuring notes"
 arch=('x86_64')
@@ -15,7 +15,7 @@ source=(
 )
 
 b2sums=(
-  'd5c2cfcc462a32572f525a72aea7637101590dc0e6d8e82ce0689c8470121e85ad9ab7774265b572678689e66f80fe10c02efdb5c4ad94bb9d0e7084ec877f22'
+  'a57d180c4ec53c751bff4ff7bb7d86e77a7081c451ea5fc2d72b0054fc906897c8ae369ada2f5c207180fc84e7971076bff12ec6d2665664c145ef9fa700cd21'
   'f86d56aaeb83a5a40f76b219e38352e91860c9dce06afa7bde9cb8342172a5c318f2424160deba48878dd983382a5edcae23178c0e301163ec7a128a85d3ddeb'
 )
 
